@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>I TAN EHHH</title>
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+    }
+
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      max-width: 400px;
+    }
+
+    h1 {
+      color: #ff4d6d;
+    }
+
+    button {
+      font-size: 18px;
+      padding: 10px 25px;
+      margin: 10px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+
+    .pink {
+      background: #ff4d6d;
+      color: white;
+    }
+
+    .gray {
+      background: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Question 1 -->
+  <div class="card" id="q1">
+    <h1>MIN DUH EM? </h1>
+    <button class="pink" onclick="toQ2()">AWWWW</button>
+    <button class="gray" onclick="no()">AIHH</button>
+  </div>
+
+  <!-- Question 2 -->
+  <div class="card" id="q2" style="display:none;">
+    <h1>KHAWNGE THIL I EI CHAK?</h1>
+    <button class="pink" onclick="toQ3('CHOPSTIYX')">CHOPSTIYX </button>
+    <button class="pink" onclick="toQ3('YAZU')">YAZU </button>
+    <button class="pink" onclick="toQ3('TEDDYS')">TEDDYS </button>
+  </div>
+
+  <!-- Question 3 -->
+  <div class="card" id="q3" style="display:none;">
+    <h1>MIN DUH CHHAN? </h1>
+    <button class="pink" onclick="final('I FEL A')">I FEL A </button>
+    <button class="pink" onclick="final('I HMELTHA A')">I HMELTHA A</button>
+    <button class="pink" onclick="final('I CHHELO A')">I CHHELO A</button>
+  </div>
+
+  <script>
+    let plan = "";
+
+    function toQ2() {
+      document.getElementById("q1").style.display = "none";
+      document.getElementById("q2").style.display = "block";
+    }
+
+    function toQ3(choice) {
+      plan = choice;
+      document.getElementById("q2").style.display = "none";
+      document.getElementById("q3").style.display = "block";
+    }
+
+    function no() {
+      alert("AIHHHH ");
+    }
+
+    function final(time) {
+      document.body.innerHTML = `
+        <div class="card">
+          <h1>AWLE</h1>
+          <p><strong>THIL EINA HMUN TUR:</strong> ${plan}</p>
+          <p><strong>MIN DUH CHHAN:</strong> ${time}</p>
+          <p>TI HREP DAWN CHE</p>
+        </div>
+      `;
+    }
+  </script>
+
+</body>
+</html>
